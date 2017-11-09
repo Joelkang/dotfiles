@@ -1,0 +1,54 @@
+[user]
+        name = Joel Kang
+        email = joel@joelkang.com
+[alias]
+        st = status
+        rs = reset
+        rh1 = reset --hard HEAD~1
+        rhom = reset --hard origin/master
+        ss = stash save
+        sp = stash pop
+	br = branch
+	st = status
+	ci = commit
+        cam = commit -am
+	co = checkout
+        ad = commit --amend
+        cia = !git add -A && git commit --amend --no-edit
+        d = diff
+        dc = commit --allow-empty -m 'DUMMY COMMIT'
+        ba = branch -a
+        cp = cherry-pick
+        cpc = !git add -A && git cherry-pick --continue
+        cpa = cherry-pick --abort
+        com = checkout master
+        dh1 = diff HEAD~1
+        dm = diff master
+        dom = diff origin/master
+	dno = diff --name-only
+        untr = rm --cached -r
+        tr = ls-files
+        mm = merge master
+        new = co -b
+        pr = pull --rebase
+        prom = pull --rebase origin master
+        prum = pull --rebase upstream master
+        po = push origin
+        pom = push origin master
+	pso =  push --set-upstream origin
+        pforce = push --force
+        us = reset HEAD --
+        us1 = reset HEAD~1
+        rb = rebase
+	rba = rebase --abort
+        rbi = rebase -i
+        rbm = rebase -i master
+        rbc = !git add -A && git rebase --continue
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+        rep = !git grep -ln $1 -- $2
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+[push]
+	default = simple

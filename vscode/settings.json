@@ -1,0 +1,30 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.rulers": [80],
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": true,
+    "files.associations": { 
+        "*.mustache": "handlebars",
+        "*.css": "scss"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg"
+        : true,
+        "**/.DS_Store": true,
+        ".idea": true,
+        "**/tmp": true,
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "typings": true
+    },
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "vs-seti",
+    "git.enableSmartCommit": true,
+    "files.autoSave": "afterDelay",
+    "scss.lint.duplicateProperties": "warning",
+    "scss.lint.zeroUnits": "warning"
+}
