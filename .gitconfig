@@ -1,18 +1,21 @@
-[user]
-        name = Joel Kang
-        email = joel@joelkang.com
 [alias]
         st = status
         rs = reset
         rh1 = reset --hard HEAD~1
         rhom = reset --hard origin/master
+	rhod = reset --hard origin/develop
         ss = stash save
         sp = stash pop
 	br = branch
 	st = status
-	ci = commit
-        cam = commit -am
+	ci = commit --no-verify
+        civ = commit
+        cim = commit --no-verify -m
+        cimv = commit -m
+        cam = commit --no-verify -am
+        camv = commit -am
 	co = checkout
+        czr = cz --retry
         ad = commit --amend
         cia = !git add -A && git commit --amend --no-edit
         d = diff
@@ -22,19 +25,28 @@
         cpc = !git add -A && git cherry-pick --continue
         cpa = cherry-pick --abort
         com = checkout master
+	cod = checkout develop
         dh1 = diff HEAD~1
         dm = diff master
+	dd = diff develop
         dom = diff origin/master
+	dod = diff origin/develop
 	dno = diff --name-only
+        dmno = diff master --name-only
+        ddno = diff develop --name-only
         untr = rm --cached -r
         tr = ls-files
         mm = merge master
+	md = merge develop
         new = co -b
-        pr = pull --rebase
-        prom = pull --rebase origin master
-        prum = pull --rebase upstream master
+        pr = pull --rebase --tags
+        prom = pull --rebase --tags origin master
+	prod = pull --rebase --tags origin develop
+        prum = pull --rebase --tags upstream master
+	prum = pull --rebase --tags upstream develop
         po = push origin
         pom = push origin master
+	pod = push origin develop
 	pso =  push --set-upstream origin
         pforce = push --force
         us = reset HEAD --
@@ -42,13 +54,31 @@
         rb = rebase
 	rba = rebase --abort
         rbi = rebase -i
+	rbd = rebase -i develop
         rbm = rebase -i master
         rbc = !git add -A && git rebase --continue
         lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
         rep = !git grep -ln $1 -- $2
+        t = tag
+        td = tag --delete
 [color]
-        diff = auto
-        status = auto
-        branch = auto
+    	ui = true
+
+[color "branch"]
+    	current = yellow reverse
+    	local = yellow
+    	remote = green
+
+[color "diff"]
+    	meta = yellow bold
+    	frag = magenta bold
+    	old = red bold
+    	new = green bold
+
+[color "status"]
+    	added = yellow
+    	changed = green
+    	untracked = red
+
 [push]
-	default = simple
+	default = current
