@@ -14,10 +14,10 @@
         cimv = commit -m
         cam = commit --no-verify -am
         camv = commit -am
-	co = checkout
+        co = checkout
         czr = cz --retry
-        ad = commit --amend
-        cia = !git add -A && git commit --amend --no-edit
+        ad = commit --amend --allow-empty
+        cia = !git add -A && git commit --amend --no-edit --no-verify
         d = diff
         dc = commit --allow-empty -m 'DUMMY COMMIT'
         ba = branch -a
@@ -27,6 +27,7 @@
         com = checkout master
 	cod = checkout develop
         dh1 = diff HEAD~1
+        dh1no = diff HEAD~1 --name-only
         dm = diff master
 	dd = diff develop
         dom = diff origin/master
@@ -53,9 +54,9 @@
         us1 = reset HEAD~1
         rb = rebase
 	rba = rebase --abort
-        rbi = rebase -i
-	rbd = rebase -i develop
-        rbm = rebase -i master
+        rbi = rebase -i --autosquash
+	rbd = rebase -i --autosquash develop
+        rbm = rebase -i --autosquash master
         rbc = !git add -A && git rebase --continue
         lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
         rep = !git grep -ln $1 -- $2
