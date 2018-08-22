@@ -8,12 +8,11 @@
         sp = stash pop
 	br = branch
 	st = status
-	ci = commit --no-verify
-        civ = commit
-        cim = commit --no-verify -m
-        cimv = commit -m
-        cam = commit --no-verify -am
-        camv = commit -am
+	ci = commit
+        cf = commit --fixup
+        cs = commit --squash
+        cim = commit -m
+        cam = commit -am
         co = checkout
         czr = cz --retry
         ad = commit --amend --allow-empty
