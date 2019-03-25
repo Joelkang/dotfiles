@@ -16,19 +16,22 @@ alias g="git"
 alias y="yarn"
 alias gco="g co"
 alias gc="vi ~/.gitconfig"
+alias nj="npx jest"
+alias njw="npx jest --watch"
 alias ls="ls -GFh"
 alias ll="ls -la"
 alias ebash="vi ~/.bashrc"
 alias rbash="source ~/.bashrc"
 alias gdiff="gist -t diff"
 alias dh1="g dh1|gdiff"
+alias ys="yarn start"
 
-export PATH="$PATH:./node_modules/bin"
+export PATH="$PATH:~/.yarn/bin:./node_modules/bin"
 
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
+source ~/.gitcompletion.sh
+source ~/.gitprompt.sh
 __git_complete gco _git_checkout
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+ [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+ [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion

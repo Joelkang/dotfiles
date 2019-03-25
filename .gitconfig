@@ -48,7 +48,7 @@
         pom = push origin master
 	pod = push origin develop
 	pso =  push --set-upstream origin
-        pforce = push --force
+        pfor = push --force
         us = reset HEAD --
         us1 = reset HEAD~1
         rb = rebase
@@ -57,6 +57,8 @@
 	rbd = rebase -i --autosquash develop
         rbm = rebase -i --autosquash master
         rbc = !git add -A && git rebase --continue
+        rwm = !git com && git pr && git co -
+        rwd = !git cod && git pr && git co :
         lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
         rep = !git grep -ln $1 -- $2
         t = tag
