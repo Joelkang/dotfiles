@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/joel/.oh-my-zsh"
+export ZSH="/Users/joelkang/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -58,7 +58,7 @@ ZSH_THEME="robbyrussell"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
- HIST_STAMPS="dd/mm/yyyy"
+# HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -70,12 +70,10 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  brew
-  npm
-  npx
-  vscode
+  git-prompt
+  nvm
+  osx
 )
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -104,4 +102,25 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.bashrc
+export WORKSPACE="~/workspace"
+export GPG_TTY=$(tty)
+
+alias fucknode="killall -9 node"
+alias fucknpm="killall -9 npm"
+alias fuckruby="killall -9 ruby"
+alias fuckall="fuckruby && fucknode && fucknpm"
+alias g="git"
+alias y="yarn"
+alias gco="g co"
+alias gc="vi ~/.gitconfig"
+alias nj="npx jest"
+alias njw="npx jest --watch"
+alias ls="ls -GFh"
+alias ll="ls -la"
+alias esh="vi ~/.zshrc"
+alias rsh="source ~/.zshrc"
+alias gdiff="gist -t diff"
+alias dh1="g dh1|gdiff"
+alias ys="yarn start"
+
+export PATH="$PATH:~/.yarn/bin:./node_modules/bin"
