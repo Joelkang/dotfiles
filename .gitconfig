@@ -8,17 +8,17 @@
         sp = stash pop
 	br = branch
 	st = status
-	ci = commit
-        cf = commit --fixup
-        cs = commit --squash
-        cim = commit -m
-        cam = commit -am
+	ci = commit -S
+        cf = commit -S  --fixup
+        cs = commit -S --squash
+        cim = commit -S -m
+        cam = commit -Sam
         co = checkout
         czr = cz --retry
-        ad = commit --amend --allow-empty
-        cia = !git add -A && git commit --amend --no-edit --no-verify
+        ad = commit -S --amend --allow-empty
+        cia = !git add -A && git commit -S --amend --no-edit --no-verify
         d = diff
-        dc = commit --allow-empty -m 'DUMMY COMMIT'
+        dc = commit --allow-empty -m -S 'DUMMY COMMIT'
         ba = branch -a
         cp = cherry-pick
         cpc = !git add -A && git cherry-pick --continue
@@ -53,7 +53,7 @@
         us1 = reset HEAD~1
         rb = rebase
 	rba = rebase --abort
-        rbi = rebase -i --autosquash
+        rbi = !git rebase -i --autosquash $1
 	rbd = rebase -i --autosquash develop
         rbm = rebase -i --autosquash master
         rbc = !git add -A && git rebase --continue
@@ -61,6 +61,7 @@
         rwd = !git cod && git pr && git co :
         lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
         rep = !git grep -ln $1 -- $2
+	resign = !git rebase --exec 'git commit --amend --no-edit -n -S' -i ${1:-develop}
         t = tag
         td = tag --delete
 [color]
